@@ -1,4 +1,3 @@
-// ===== Theme toggle (robust when #theme-toggle is missing) =====
 (() => {
   const root = document.documentElement;
   const toggleBtn = document.querySelector('#theme-toggle');
@@ -15,7 +14,6 @@
     }
   }
 
-  // Load saved preference and apply
   try {
     const saved = localStorage.getItem('prefers-dark') === 'true';
     applyTheme(saved);
@@ -23,7 +21,6 @@
     applyTheme(false);
   }
 
-  // Wire up button if present
   if (toggleBtn){
     toggleBtn.addEventListener('click', ()=>{
       const nowDark = !document.documentElement.hasAttribute('data-theme');
@@ -33,8 +30,6 @@
   }
 })();
 
-
-// ===== Show/Hide content notes =====
 (() => {
   const toggles = document.querySelectorAll('.toggle');
   toggles.forEach(btn=>{
@@ -53,8 +48,6 @@
   });
 })();
 
-
-// (Optional) Respect prefers-reduced-motion
 (() => {
   try {
     const mq = window.matchMedia('(prefers-reduced-motion: reduce)');
@@ -64,8 +57,6 @@
   } catch(e){ /* no-op */ }
 })();
 
-
-// ===== Flexbox Playground controls (no-op if playground not on page) =====
 (() => {
   const stage = document.getElementById('pg-stage');
   if(!stage) return;
@@ -97,8 +88,6 @@
   apply();
 })();
 
-
-// ===== Save Flexbox Froggy code to localStorage =====
 (() => {
   const input = document.getElementById('froggy-code');
   const btn = document.getElementById('save-froggy');
@@ -123,8 +112,6 @@
   });
 })();
 
-
-// ===== Reviews Carousel =====
 (() => {
   const track = document.querySelector('.review-track');
   if(!track) return;
@@ -136,7 +123,6 @@
 
   let index = 0;
 
-  // Create dots
   const dots = slides.map((_, i) => {
     const b = document.createElement('button');
     b.type = 'button';
@@ -165,13 +151,11 @@
   prev && prev.addEventListener('click', ()=> goTo(index - 1));
   next && next.addEventListener('click', ()=> goTo(index + 1));
 
-  // Keyboard arrows
   document.addEventListener('keydown', (e)=>{
     if(e.key === 'ArrowLeft') goTo(index - 1);
     if(e.key === 'ArrowRight') goTo(index + 1);
   });
 
-  // Touch swipe
   let startX = null;
   track.addEventListener('touchstart', (e)=> startX = e.touches[0].clientX, {passive:true});
   track.addEventListener('touchmove', (e)=>{
@@ -187,20 +171,17 @@
   update();
 })();
 
-
-// === Theme toggle switch logic ===
 (function(){
   var root = document.documentElement;
   var checkbox = document.getElementById('theme-toggle');
   if (!checkbox) return;
 
-  // Load saved theme
   var saved = localStorage.getItem('theme');
   if (saved) {
     root.setAttribute('data-theme', saved);
     checkbox.checked = (saved === 'light');
   } else {
-    // Default dark
+
     root.setAttribute('data-theme','dark');
     checkbox.checked = false;
   }
