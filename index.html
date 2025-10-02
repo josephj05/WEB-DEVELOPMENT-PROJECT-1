@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Korean Movie Guide — Website #1</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header cinema-header" role="banner">
+    <div class="container header-inner">
+      <a class="logo" href="#top"><span>Korean</span> Movie Guide</a>
+  <div class="search-bar">
+    <input type="text" placeholder="Search movies..." aria-label="Search movies" />
+  </div>
+      <nav aria-label="Primary">
+        <ul class="nav">
+          <li><a href="#overview">Overview</a></li>
+          <li><a href="#movies">Movies</a></li>
+          <li><a href="#reviews">User Reviews</a></li>
+          <li><a href="#subscribe">Subscribe</a></li>
+        <li><label class="switch"><input type="checkbox" id="theme-toggle" aria-label="Toggle dark mode"><span class="slider"></span></label></li></ul>
+      </nav>
+      
+    </div>
+  </header>
+
+  <section id="top" class="hero-banner" role="region" aria-label="Featured">
+    <div class="hero-media" aria-hidden="true"></div>
+    <div class="hero-overlay"></div>
+    <div class="container hero-inner">
+      <h1 class="hero-title">Watch Great Korean Films — Free Picks, Zero Spoilers</h1>
+      <p class="hero-sub">Curated by Korean audiences. Start with this week’s staff picks or browse by mood.</p>
+      <div class="hero-ctas">
+        <a href="#movies" class="btn btn-primary">Start Watching</a>
+        <a href="#overview" class="btn btn-outline">Learn More</a>
+      </div>
+      <div class="quick-picks hero-chips" aria-label="Quick filter tags">
+        <button class="chip" data-filter="drama" aria-pressed="false">Drama</button>
+        <button class="chip" data-filter="thriller" aria-pressed="false">Thriller</button>
+        <button class="chip" data-filter="animation" aria-pressed="false">Animation</button>
+        <button class="chip" data-filter="short" aria-pressed="false">&lt; 110 min</button>
+      </div>
+    </div>
+  </section>
+
+  <main class="container" role="main">
+    <section id="overview" class="section section-tight">
+      <h2 class="sr-only">Overview</h2>
+      
+    
+      <div class="overview-text">
+        
+        <h3>What is Great K‑Movies?</h3>
+        <p><strong>Great K‑Movies</strong> is a compact guide to Korean cinema, curated with input from Korean audiences.
+        Each week we highlight a handful of films with a spoiler‑free summary, mood tags, and authentic user reviews
+        so you can decide quickly what to watch tonight.</p>
+        <h4>How to use this site</h4>
+        <ul>
+          <li>Browse featured titles in <b>Movies</b>.</li>
+          <li>Check real <b>User Reviews</b> and star ratings.</li>
+          <li>Ready? Just click the <b>Start Watching</b> button at the top!</li>
+        </ul>
+        <ul>
+          <li>✦ Korean‑audience perspectives</li>
+          <li>✦ Spoiler‑free summaries</li>
+          <li>✦ Genre & runtime chips for quick scanning</li>
+          <li>✦ Fresh picks updated regularly</li>
+        </ul>
+      </div>
+</section>
+
+    <section id="movies" class="section">
+      <div class="section-head">
+        <h2>Featured Movies</h2>
+        <a href="#reviews" class="link">See User Reviews →</a>
+      </div>
+      <div class="cards">
+        <article class="card" data-tags="thriller drama">
+          <figure class="poster">
+            <img src="parasite.jpg" alt="Parasite poster" loading="lazy"/>
+          </figure>
+          <h3>Parasite <span class="year">(2019)</span></h3>
+          <p class="summary">A razor-sharp class thriller balancing dark comedy with social critique.</p>
+          <ul class="badges" aria-label="Content tags">
+            <li>Thriller</li><li>Drama</li><li>132m</li>
+          </ul>
+          <button class="toggle" data-target="parasite-notes">Show content notes</button>
+          <div id="parasite-notes" class="notes" hidden>
+            <ul>
+              <li>Language: Korean; Sub/ Dub available</li>
+              <li>Violence: Moderate</li>
+              <li>Where to watch: Check local streaming listings</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="card" data-tags="drama">
+          <figure class="poster">
+            <img src="pastlives.png" alt="Past Lives poster" loading="lazy"/>
+          </figure>
+          <h3>Past Lives <span class="year">(2023)</span></h3>
+          <p class="summary">A tender, quiet story about chance, love, and the lives we might have lived.</p>
+          <ul class="badges" aria-label="Content tags">
+            <li>Drama</li><li>Romance</li><li>106m</li>
+          </ul>
+          <button class="toggle" data-target="pastlives-notes">Show content notes</button>
+          <div id="pastlives-notes" class="notes" hidden>
+            <ul>
+              <li>Language: English/Korean</li>
+              <li>Violence: Low</li>
+              <li>Where to watch: Major VOD platforms</li>
+            </ul>
+          </div>
+        </article>
+
+        <article class="card" data-tags="animation family">
+          <figure class="poster">
+            <img src="kpopdemonhunters.jpeg" alt="K-Pop Demon Hunters poster" loading="lazy"/>
+          </figure>
+          <h3>K-Pop Demon Hunters <span class="year">(2025)</span></h3>
+          <p class="summary">An action-packed animated adventure where a K-pop group secretly battles demons while chasing stardom.</p>
+          <ul class="badges" aria-label="Content tags">
+            <li>Animation</li><li>Action</li><li>110m</li>
+          </ul>
+          <button class="toggle" data-target="spirited-notes">Show content notes</button>
+          <div id="spirited-notes" class="notes" hidden>
+            <ul>
+              <li>Language: English/Korean</li>
+              <li>Violence: Low</li>
+              <li>Where to watch: Netflix exclusive</li>
+            </ul>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    
+<section id="reviews" class="section">
+  <h2>User Reviews</h2>
+
+  <div class="review-carousel" aria-label="User reviews carousel">
+    <button class="review-nav prev" aria-label="Previous review">‹</button>
+
+    <div class="review-viewport">
+      <div class="review-track">
+        <article class="review" aria-roledescription="slide" aria-label="1 of 3">
+          <p class="quote">"A gripping story with sharp social commentary — unforgettable."</p>
+          <div class="stars">⭐⭐⭐⭐</div>
+          <div class="user">– filmfan92</div>
+        </article>
+        <article class="review" aria-roledescription="slide" aria-label="2 of 3">
+          <p class="quote">"Beautifully shot and quietly emotional. It stayed with me for days."</p>
+          <div class="stars">⭐⭐⭐</div>
+          <div class="user">– kdramaLover</div>
+        </article>
+        <article class="review" aria-roledescription="slide" aria-label="3 of 3">
+          <p class="quote">"Fun concept mixing K-pop and demons! A bit cheesy but entertaining."</p>
+          <div class="stars">⭐⭐⭐⭐</div>
+          <div class="user">– neonbeats</div>
+        </article>
+      </div>
+    </div>
+
+    <button class="review-nav next" aria-label="Next review">›</button>
+  </div>
+
+  <div class="review-dots" role="tablist" aria-label="Review pagination"></div>
+</section>
+
+
+    <section id="subscribe" class="section">
+      <h2>Subscribe for Updates</h2>
+      <p id="a11y-notes">Subscribe to get the latest Korean movie picks, weekly highlights, and updates delivered straight to your inbox.</p>
+      <form class="form" aria-describedby="a11y-notes">
+        <div class="form-row">
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" placeholder="Your full name" required />
+        </div>
+        <div class="form-row">
+          <label for="email">Email</label>
+          <input type="email" id="email" name="email" placeholder="you@example.com" required />
+        </div>
+        <div class="form-row">
+          <label for="genre">Favorite Genre</label>
+          <select id="genre" name="genre">
+            <option>Drama</option><option>Thriller</option><option>Animation</option><option>Documentary</option>
+          </select>
+        </div>
+        <fieldset class="form-row">
+          <legend>Notifications</legend>
+          <label><input type="checkbox" name="daily" value="1" /> Daily digest</label>
+          <label><input type="checkbox" name="weekly" value="1" /> Weekly picks</label>
+        </fieldset>
+        <div class="form-actions">
+          <button type="submit" class="btn">Subscribe</button>
+          <button type="reset" class="btn btn-secondary">Clear</button>
+        </div>
+      </form>
+    </section>
+  </main>
+
+  <footer class="site-footer cinema-footer" role="contentinfo">
+    <div class="container footer-inner">
+      <small>© 2025 Korean Movie Guide · Built for CSE 2004 Website #1</small>
+      <ul class="footer-links">
+        <li><a href="#top">Back to top</a></li>
+        <li><a href="#overview">Overview</a></li>
+      </ul>
+    </div>
+  </footer>
+
+  <button id="scroll-top" class="btn scroll-top" aria-label="Back to top">⬆️ Top</button>
+
+  <script src="script.js" defer></script>
+  <script>
+    const header = document.querySelector('.cinema-header');
+    const onScroll = () => header.classList.toggle('scrolled', window.scrollY > 12);
+    document.addEventListener('scroll', onScroll); onScroll();
+  </script>
+</body>
+</html>
