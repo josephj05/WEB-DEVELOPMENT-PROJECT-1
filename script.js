@@ -58,61 +58,6 @@
 })();
 
 (() => {
-  const stage = document.getElementById('pg-stage');
-  if(!stage) return;
-
-  const dir = document.getElementById('pg-direction');
-  const just = document.getElementById('pg-justify');
-  const ali = document.getElementById('pg-align');
-  const wrap = document.getElementById('pg-wrap');
-  const gap = document.getElementById('pg-gap');
-  const gapVal = document.getElementById('pg-gap-val');
-
-  function apply(){
-    stage.style.flexDirection = dir.value;
-    stage.style.justifyContent = just.value;
-    stage.style.alignItems = ali.value;
-    stage.style.flexWrap = wrap.value;
-    stage.style.gap = gap.value + 'px';
-    gapVal.textContent = gap.value;
-  }
-
-  ['change','input'].forEach(evt=>{
-    dir.addEventListener(evt, apply);
-    just.addEventListener(evt, apply);
-    ali.addEventListener(evt, apply);
-    wrap.addEventListener(evt, apply);
-    gap.addEventListener(evt, apply);
-  });
-
-  apply();
-})();
-
-(() => {
-  const input = document.getElementById('froggy-code');
-  const btn = document.getElementById('save-froggy');
-  const status = document.getElementById('froggy-status');
-  if(!input || !btn) return;
-
-  const saved = localStorage.getItem('froggy-code');
-  if(saved){
-    input.value = saved;
-    status.textContent = 'Saved code found: ' + saved;
-  }
-
-  btn.addEventListener('click', (e)=>{
-    e.preventDefault();
-    const val = input.value.trim();
-    if(!val){
-      status.textContent = 'Please paste your code first.';
-      return;
-    }
-    localStorage.setItem('froggy-code', val);
-    status.textContent = 'Saved! (' + val + ')';
-  });
-})();
-
-(() => {
   const track = document.querySelector('.review-track');
   if(!track) return;
 
